@@ -66,14 +66,7 @@ export default function CTA() {
         >
           {t.cta.wa}
         </a>
-        <a
-          className="btn secondary"
-          href="REPLACE_WITH_YOUR_SCHEDULING_LINK"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {t.cta.call}
-        </a>
+        
       </div>
 
       {/* Contact Form */}
