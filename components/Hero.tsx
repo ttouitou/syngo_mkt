@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { LANGS } from "@/lib/i18n";
 import { useI18n } from "@/app/Providers";
 
@@ -9,7 +10,13 @@ export default function Hero() {
   return (
     <section className="hero" id="top">
       <nav className="nav">
-        <div className="logo">{t.nav.logo}</div>
+        <div className="logo"><Image
+            src="/SynagoGive.png"
+            alt="SynagoGive"
+            width={180}
+            height={48}
+            priority
+          /></div>
 
         <div className="lang-switch" role="group" aria-label="Language switch">
           {LANGS.map((l) => (
