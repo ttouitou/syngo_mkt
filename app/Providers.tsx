@@ -6,24 +6,28 @@ import { DIR_BY_LANG, type Lang, MESSAGES } from "@/lib/i18n";
 type I18nContextValue = {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: (typeof MESSAGES)["en"];
   dir: "ltr" | "rtl";
+  t: typeof MESSAGES[Lang]; // <--- ADD THIS LINE
 };
 
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 function isLang(x: string | null): x is Lang {
-  return x === "en" || x === "fr" || x === "he";
+  return  x === "fr" || x === "he";
 }
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "en";
+    // Default for server-side rendering
+    if (typeof window === "undefined") return "he"; 
+    
     try {
       const saved = localStorage.getItem("lang");
-      return isLang(saved) ? saved : "en";
+      // If a valid language is saved, use it. Otherwise, default to "he"
+      return isLang(saved) ? saved : "he"; 
     } catch {
-      return "en";
+      // If localStorage fails, default to "he"
+      return "he"; 
     }
   });
 

@@ -16,7 +16,7 @@ export default function Members() {
             <li key={x}>{x}</li>
           ))}
         </ul>
-        <p className="muted">{t.members.note}</p>
+       
       </div>
     </section>
   );

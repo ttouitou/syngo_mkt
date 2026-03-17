@@ -15,7 +15,7 @@ export default function Home() {
       <Solution />
       <Members />
       <Community />
-      <Pricing />
+      {/* <Pricing /> */}
       <Trust />
       <CTA />
     </>

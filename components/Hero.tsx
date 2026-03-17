@@ -13,8 +13,8 @@ export default function Hero() {
         <div className="logo"><Image
             src="/SynagoGive.png"
             alt="SynagoGive"
-            width={180}
-            height={48}
+            width={240}
+            height={64}
             priority
           /></div>
 
@@ -49,8 +49,11 @@ export default function Hero() {
             {t.hero.cta2}
           </a>
         </div>
+        <p style={{ marginTop: '15px', fontSize: '0.9rem',  fontWeight: 500 }}>
+          {t.hero.trustBadge}
+        </p>
 
-        <p className="hero-note">{t.hero.note}</p>
+  
       </div>
     </section>
   );

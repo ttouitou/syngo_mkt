@@ -1,13 +1,10 @@
-export type Lang = "en" | "fr" | "he";
+export type Lang = "fr" | "he";
 
 export const LANGS: { code: Lang; label: string }[] = [
-  { code: "en", label: "EN" },
-  { code: "fr", label: "FR" },
-  { code: "he", label: "עברית" },
+  { code: "he", label: "🇮🇱 ישראל" },
+  { code: "fr", label: "🇫🇷 France" }
 ];
-
 export const DIR_BY_LANG: Record<Lang, "ltr" | "rtl"> = {
-  en: "ltr",
   fr: "ltr",
   he: "rtl",
 };
@@ -21,11 +18,12 @@ export const MESSAGES: Record<
       subtitle: string;
       cta1: string;
       cta2: string;
-      note: string;
+      trustBadge: string;
+       
     };
     problem: { title: string; items: string[] };
     solution: { title: string; cards: string[] };
-    members: { title: string; items: string[]; note: string };
+    members: { title: string; items: string[];};
     community: { title: string; cards: string[] };
     pricing: { title: string; price: string; subtitle: string; addon: string };
     trust: { title: string; cards: string[] };
@@ -44,97 +42,19 @@ export const MESSAGES: Record<
     };
   }
 > = {
-  en: {
-  nav: { logo: "Community Donations" },
-
-  hero: {
-    title: "Collect donations faster - with zero chasing",
-    subtitle:
-      "At the end of Shabbat or Yom Tov, the Gabai sends one simple sheet. We handle the upload, updates, and follow-up as a service - members immediately see their balance and can pay online.",
-    cta1: "Request a Demo",
-    cta2: "WhatsApp",
-    note: "Payments: Bit + PayBox today. Credit card via Nedarim Plus (Section 46-ready for approved institutions) - coming soon.",
-  },
-
-  problem: {
-    title: "Donation Management Should Be Simple",
-    items: [
-      "Spreadsheets and WhatsApp messages get messy and take hours",
-      "Members don’t know what they owe, so payments get delayed",
-      "Following up for payments is uncomfortable and never ends",
-    ],
-  },
-
-  solution: {
-    title: "A Managed Service for the Gabai",
-    cards: [
-      "You send the sheet - we handle the rest",
-      "Members portal with balances, payments, and history",
-      "Also a community hub: announcements, prayer times, professionals",
-    ],
-  },
-
-  members: {
-    title: "For Community Members",
-    items: [
-      "Clear balance and history in one place",
-      "Pay online in seconds (Bit, PayBox)",
-      "No confusion, no chasing, no awkward conversations",
-    ],
-    note: "Optional: credit card payments via Nedarim Plus - coming soon.",
-  },
-
-  community: {
-    title: "A Tool for Community Communication",
-    cards: [
-      "Prayer times and Shabbat times",
-      "Community announcements and updates",
-      "Trusted professionals directory",
-    ],
-  },
-
-  pricing: {
-    title: "Simple Monthly Pricing",
-    price: "₪200-250 / Month",
-    subtitle: "Managed service - onboarding and support included",
-    addon: "Optional add-on: credit card via Nedarim Plus (coming soon)",
-  },
-
-  trust: {
-    title: "Secure and Confidential",
-    cards: [
-      "Role-based access (admin vs members)",
-      "Confidential by design - members only see their own data",
-      "Audit trail and controlled changes",
-    ],
-  },
-
-  cta: {
-    title: "Let’s Simplify Donation Management",
-    wa: "WhatsApp",
-    contactTitle: "Get in Touch",
-    namePh: "Your Name",
-    emailPh: "Your Email",
-    messagePh: "Your Message",
-    send: "Send Message",
-    sending: "Sending...",
-    sentOk: "✅ Message sent successfully!",
-    sentFail: "❌ Failed to send. Try again.",
-  },
-},
+ 
 
 
   fr: {
   nav: { logo: "Dons Communautaires" },
 
   hero: {
-    title: "Collectez plus vite - sans relances",
-    subtitle:
-      "À la fin de Chabbat ou de Yom Tov, le Gabbaï envoie un simple tableau. On s’occupe de tout comme un service - mise à jour, suivi, et les membres voient immédiatement leur solde et peuvent payer en ligne.",
-    cta1: "Demander une démo",
-    cta2: "WhatsApp",
-    note: "Paiements : Bit + PayBox aujourd’hui. Carte bancaire via Nedarim Plus (compatible סעיף 46 pour institutions agréées) - bientôt disponible.",
-  },
+  title: "La gestion de votre Synagogue, 100% digitalisée",
+  subtitle: "La plateforme complète pour gérer vos fidèles, les montées à la Torah et les encaissements. Acceptez les paiements sécurisés par carte bancaire (via Stripe) avec génération et envoi immédiat des reçus CERFA automatiques.",
+  cta1: "Commencer maintenant",
+  cta2: "WhatsApp",
+  trustBadge: "🔒 Paiements sécurisés : Stripe  • Reçus CERFA"
+},
 
   problem: {
     title: "La gestion des dons doit être simple",
@@ -145,23 +65,24 @@ export const MESSAGES: Record<
     ],
   },
 
-  solution: {
-    title: "Un service géré pour le Gabbaï",
-    cards: [
-      "Vous envoyez le tableau - on s’occupe du reste",
-      "Portail membres avec soldes, paiements et historique",
-      "Aussi un outil de communauté : annonces, horaires, répertoire",
-    ],
-  },
+ solution: {
+  title: "Notre Solution pour votre Synagogue",
+  cards: [
+    "📄 CERFA 100% Automatisés : Fini les carnets à souches. Chaque don génère et envoie instantanément un reçu fiscal CERFA officiel par e-mail.",
+    "💳 Paiement en Ligne (Stripe) : Permettez à vos fidèles de régler leurs dons et leurs dettes par carte bancaire en toute simplicité.",
+    "📊 Relevés Annuels en 1 Clic : Gagnez des heures de travail. Vos fidèles téléchargent eux-mêmes leur récapitulatif comptable annuel.",
+    "📱 Espace Fidèle & Gabbai : Une application web centralisée. Le fidèle suit ses paiements, le Gabbai gère les encaissements en temps réel."
+  ]
+},
 
   members: {
     title: "Pour les membres",
     items: [
       "Solde clair et historique au même endroit",
-      "Paiement rapide en ligne (Bit, PayBox)",
+      "Paiement rapide en ligne (Stripe)",
       "Moins de confusion, moins de relances",
     ],
-    note: "Option : paiement par carte via Nedarim Plus - bientôt disponible.",
+
   },
 
   community: {
@@ -181,13 +102,13 @@ export const MESSAGES: Record<
   },
 
   trust: {
-    title: "Sécurisé et confidentiel",
-    cards: [
-      "Accès par rôles (admin vs membres)",
-      "Confidentialité : chaque membre ne voit que ses données",
-      "Journal d’activité et changements contrôlés",
-    ],
-  },
+  title: "Sécurité & Conformité Fiscale",
+  cards: [
+    "🔒 Paiements Sécurisés : Intégration officielle avec Stripe, la norme mondiale de sécurité pour les paiements en ligne.",
+    "⚖️ 100% Légal & Conforme : Reçus CERFA formatés selon les exigences strictes de l'administration fiscale française.",
+    "☁️ Vos données vous appartiennent : Base de données synchronisée en toute sécurité avec le compte Google Workspace de votre communauté."
+  ]
+},
 
   cta: {
     title: "Simplifions la gestion des dons",
@@ -209,13 +130,12 @@ export const MESSAGES: Record<
   nav: { logo: "תרומות לקהילה" },
 
   hero: {
-    title: "אוספים תרומות מהר יותר - בלי לרדוף אחרי אנשים",
-    subtitle:
-      "בסוף שבת או חג הגבאי שולח קובץ אחד פשוט. אני מטפל בהעלאה, בעדכון ובמעקב כשירות - וכל חבר רואה מיד יתרה ויכול לשלם אונליין.",
-    cta1: "קבעו הדגמה",
-    cta2: "וואטסאפ",
-    note: "תשלומים: Bit ו-PayBox כבר עכשיו. כרטיס אשראי דרך Nedarim Plus (מותאם לסעיף 46 למוסדות מאושרים) - בקרוב.",
-  },
+  title: "ניהול תרומות חכם לבית הכנסת שלכם",
+  subtitle: "מערכת דיגיטלית מתקדמת לניהול קהילה, עליות וגבייה. תמיכה מלאה בתשלומים דרך ביט (Bit), פייבוקס (PayBox) וכרטיסי אשראי. הפקת קבלות אוטומטיות המוכרות לפי סעיף 46 (הסליקה מתבצעת כרגע דרך Cardcom, אך המערכת ניתנת להתאמה לכל חברת סליקה שתבחרו).",
+  cta1: "התחילו עכשיו",
+  cta2: "וואטסאפ",
+  trustBadge: "🔒 תומך ב: אשראי • Bit • PayBox • סעיף 46 (מותאם לכל חברות הסליקה)"
+},
 
   problem: {
     title: "ניהול תרומות לא חייב להיות מסובך",
@@ -227,13 +147,22 @@ export const MESSAGES: Record<
   },
 
   solution: {
-    title: "שירות מנוהל לגבאי",
-    cards: [
-      "אתם שולחים קובץ - אני מטפל בכל השאר",
-      "פורטל לחברי הקהילה: יתרה, תשלומים והיסטוריה",
-      "גם כלי תקשורת לקהילה: הודעות, זמני תפילה ורשימות",
-    ],
-  },
+  title: "הפתרון המושלם לניהול הקהילה",
+  cards: [
+    "🧾 קבלות סעיף 46 אוטומטיות : סליקה מהירה ושליחת קבלה המוכרת למס (סעיף 46) ישירות למייל של התורם ברגע התשלום.",
+    "💳 חיבור ישיר ל-Cardcom : סליקת אשראי מאובטחת וקלה המחוברת ישירות למסוף קארדקום של העמותה שלכם.",
+    "📖 ניהול עליות ונדבות : תיעוד חכם של כל התרומות, העליות והנדבות ישירות לגיליון נתונים (Google Sheets) מסודר ונגיש.",
+    "📱 אזור אישי למתפלל : כל תורם יכול לצפות ביתרת החוב שלו, לשלם בלחיצת כפתור, ולהוריד אישור תרומות שנתי למס הכנסה."
+  ]
+},
+trust: {
+  title: "אבטחה, אמינות ותקן מחמיר",
+  cards: [
+    "🔒 סליקה בתקן PCI-DSS : תשלומים מאובטחים ברמה הגבוהה ביותר דרך מערכות קארדקום.",
+    "⚖️ מוכר על ידי מס הכנסה : הפקת מסמכים חשבונאיים חוקיים (מסמך 405 - קבלה על תרומה) התואמים לדרישות רשות המיסים בישראל.",
+    "☁️ גיבוי ובעלות על הנתונים : כל הנתונים שלכם נשמרים בטוחים ומגובים בזמן אמת ב-Google Drive של העמותה בלבד."
+  ]
+},
 
   members: {
     title: "לחברי הקהילה",
@@ -242,7 +171,6 @@ export const MESSAGES: Record<
       "תשלום אונליין תוך שניות (Bit, PayBox)",
       "פחות בלבול, פחות תזכורות",
     ],
-    note: "אופציה: תשלום באשראי דרך Nedarim Plus - בקרוב.",
   },
 
   community: {
@@ -261,14 +189,7 @@ export const MESSAGES: Record<
     addon: "אופציה בתוספת: אשראי דרך Nedarim Plus (בקרוב)",
   },
 
-  trust: {
-    title: "מאובטח וחסוי",
-    cards: [
-      "גישה לפי הרשאות (מנהל מול חברים)",
-      "חסוי כברירת מחדל - כל אחד רואה רק את הנתונים שלו",
-      "תיעוד פעולות ושינויים מבוקרים",
-    ],
-  },
+
 
   cta: {
     title: "בואו נפשט את ניהול התרומות",
